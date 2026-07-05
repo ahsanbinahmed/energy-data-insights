@@ -7,6 +7,10 @@ This project tracks real UK energy market data over time, turning it into
 clear visuals and analysis. I am Ahsan Bin Ahmed, an Energy Markets Specialist in the UK. Aiming to build these as a 
 public portfolio of applied data work.
 
+## Dashboard Preview
+![Actual vs Forecast](Actual%20Vs%20Forecast%2028%20Jun%20to%205th%20Jul.png)
+![Fuel Mix](Fuel%20Mix%2028%20Jun%20to%205th%20Jul.png)
+
 ## Week 1: Carbon Intensity (National Grid ESO)
 
 **Source:** [Carbon Intensity API](https://carbonintensity.org.uk/) — live, 
