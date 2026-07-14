@@ -1,4 +1,4 @@
-# Energy Data Insights
+  # Energy Data Insights
 
 Weekly analysis of UK energy market data — live datasets, Power BI dashboards, and insights, built as an ongoing public series.
 
@@ -35,6 +35,17 @@ consistently overestimated carbon intensity overnight (11pm–7am, by
 and nuclear share showing the strongest (though still weak) 
 relationship — worth tracking over further weeks before drawing a firm 
 conclusion.
+
+## Findings Log
+- **Week 1 (27 Jun–4 Jul):** Forecast carried a systematic time-of-day 
+  bias — too high overnight (11pm-7am, by 8-16 gCO2/kWh), too low during 
+  the afternoon peak (3-5pm, by 11-19 gCO2/kWh). Mean absolute error: 
+  10.3 gCO2/kWh.
+- **Week 2 (5-12 Jul):** Same directional bias repeated — overnight too 
+  high (avg -6.8), afternoon too low (avg +11.5). Mean absolute error 
+  improved slightly to 8.6 gCO2/kWh. Two weeks in, the pattern looks 
+  structural rather than random.
+
 
 ## Roadmap
 Future weeks will cover: NESO forecast accuracy, Elexon settlement data, 
