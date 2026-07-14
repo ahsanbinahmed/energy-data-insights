@@ -42,8 +42,8 @@ conclusion.
 public, no authentication required.
 
 **Charts:**
-![Actual vs Forecast — Week 2](screenshots/week2/Actual Vs Forecast 6th Jul to 12th July.png)
-![Generation Mix — Week 2](screenshots/week2/Fuel Mix 6th Jul to 12th Jul.png)
+![Actual vs Forecast — Week 2](screenshots/week2/Actual_Vs_Forecast_6th_Jul_to_12th_July.png)
+![Generation Mix — Week 2](screenshots/week2/Fuel_Mix_6th_Jul_to_12th_Jul.png)
 
 **What's in this analysis:**
 - Actual vs Forecast carbon intensity (gCO2/kWh) over a fresh 7-day window
