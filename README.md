@@ -41,6 +41,10 @@ conclusion.
 **Source:** [Carbon Intensity API](https://carbonintensity.org.uk/) — live, 
 public, no authentication required.
 
+**Charts:**
+![Actual vs Forecast — Week 2](screenshots/week2/Actual Vs Forecast 6th Jul to 12th July.png)
+![Generation Mix — Week 2](screenshots/week2/Fuel Mix 6th Jul to 12th Jul.png)
+
 **What's in this analysis:**
 - Actual vs Forecast carbon intensity (gCO2/kWh) over a fresh 7-day window
 - Generation mix by fuel type over the same period
