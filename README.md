@@ -36,6 +36,28 @@ and nuclear share showing the strongest (though still weak)
 relationship — worth tracking over further weeks before drawing a firm 
 conclusion.
 
+## Week 2: Carbon Intensity — Pattern Check (National Grid ESO)
+
+**Source:** [Carbon Intensity API](https://carbonintensity.org.uk/) — live, 
+public, no authentication required.
+
+**What's in this analysis:**
+- Actual vs Forecast carbon intensity (gCO2/kWh) over a fresh 7-day window
+- Generation mix by fuel type over the same period
+- A direct comparison against Week 1's findings, to check whether the 
+  forecast bias was a one-off or a repeating pattern
+
+**Files:**
+- `ABA_CarbonIntensity.pbix` — Power BI file (updated for Week 2 dates)
+- `screenshots/` — Week 2 chart images
+
+**Key observation:** The time-of-day forecast bias identified in Week 1 
+repeated in a fresh, independent week of data. Forecasts again ran too 
+high overnight and too low during the afternoon peak — overnight average 
+gap -6.8 gCO2/kWh, afternoon average +11.5 gCO2/kWh. Mean absolute error 
+improved slightly (8.6 vs 10.3 gCO2/kWh in Week 1), but the directional 
+pattern held. Two weeks in, this looks structural rather than random.
+
 ## Findings Log
 - **Week 1 (27 Jun–4 Jul):** Forecast carried a systematic time-of-day 
   bias — too high overnight (11pm-7am, by 8-16 gCO2/kWh), too low during 
