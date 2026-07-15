@@ -73,6 +73,25 @@ pattern held. Two weeks in, this looks structural rather than random.
   structural rather than random.
 
 
+## Bonus: Match Night Demand (Elexon)
+
+**Source:** [Elexon Insights Solution](https://bmrs.elexon.co.uk/) — 
+Initial National Demand Outturn (INDO), live, public, no authentication 
+required.
+
+**What's in this analysis:**
+- GB national demand (MW) across the evening of the England vs Norway 
+  World Cup quarter-final, 11 July 2026
+
+**Chart:**
+![Match Night Demand](screenshots/bonus-matchnight/Match_Analysis_12th_July.png)
+
+**Key observation:** Demand fell steadily through the evening as usual 
+(600-900MW every half hour), but right at kickoff (10pm), the fall 
+nearly stopped — just 116MW, the smallest drop of the night. A second 
+check is planned around tonight's England vs Argentina semi-final to 
+see if the pattern repeats.
+
 ## Roadmap
 Future weeks will cover: NESO forecast accuracy, Elexon settlement data, 
 DESNZ energy trends, and Ofgem data portal — each
