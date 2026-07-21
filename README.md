@@ -62,6 +62,8 @@ gap -6.8 gCO2/kWh, afternoon average +11.5 gCO2/kWh. Mean absolute error
 improved slightly (8.6 vs 10.3 gCO2/kWh in Week 1), but the directional 
 pattern held. Two weeks in, this looks structural rather than random.
 
+
+
 ## Findings Log
 - **Week 1 (27 Jun–4 Jul):** Forecast carried a systematic time-of-day 
   bias — too high overnight (11pm-7am, by 8-16 gCO2/kWh), too low during 
@@ -71,6 +73,10 @@ pattern held. Two weeks in, this looks structural rather than random.
   high (avg -6.8), afternoon too low (avg +11.5). Mean absolute error 
   improved slightly to 8.6 gCO2/kWh. Two weeks in, the pattern looks 
   structural rather than random.
+- **Week 3 (12-19 Jul):** Directional bias held for a third week, but 
+  shape is shifting — overnight gap shrinking (was -16, now -3.4 avg), 
+  afternoon gap growing (was +19, now +17.1 avg). MAE roughly stable at 
+  9.4 gCO2/kWh.
 
 
 ## Bonus: Match Night Demand (Elexon)
@@ -92,6 +98,32 @@ nearly stopped — just 116MW, the smallest drop of the night. A second
 check is planned around tonight's England vs Argentina semi-final to 
 see if the pattern repeats.
 
+## Week 3: Carbon Intensity — Pattern Evolving (National Grid ESO)
+
+**Source:** [Carbon Intensity API](https://carbonintensity.org.uk/) — live, 
+public, no authentication required.
+
+**What's in this analysis:**
+- Actual vs Forecast carbon intensity (gCO2/kWh) over a third independent 
+  7-day window
+- Generation mix by fuel type over the same period
+- A three-week comparison to check whether the forecast bias is stable 
+  or shifting
+
+**Files:**
+- `ABA_CarbonIntensity.pbix` — Power BI file (updated for Week 3 dates)
+- `screenshots/week3/` — Week 3 chart images
+
+**Key observation:** The directional bias held for a third straight week 
+(forecast too high overnight, too low in the afternoon), but its shape 
+is shifting — the overnight gap has been shrinking each week (8-16 → 6.8 
+avg → 3.4 avg gCO2/kWh), while the afternoon gap has been growing (11-19 
+→ 11.5 avg → 17.1 avg gCO2/kWh). Mean absolute error stayed roughly 
+stable at 9.4 gCO2/kWh. A notable new gap also appeared around 8-9am 
+(-22.8 gCO2/kWh) — worth watching next week to see if it recurs.
+
 ## Roadmap
 Future weeks will cover: NESO forecast accuracy, Elexon settlement data, 
 DESNZ energy trends, and Ofgem data portal — each
+
+
