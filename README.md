@@ -103,6 +103,10 @@ see if the pattern repeats.
 **Source:** [Carbon Intensity API](https://carbonintensity.org.uk/) — live, 
 public, no authentication required.
 
+**Charts:**
+![Actual vs Forecast — Week 3](screenshots/week3/Week_3_Gen_Mix_Screenshot.png)
+![Generation Mix — Week 3](screenshots/week3/Week_3_Actual_vs_Forecast_Screenshot.png)
+
 **What's in this analysis:**
 - Actual vs Forecast carbon intensity (gCO2/kWh) over a third independent 
   7-day window
