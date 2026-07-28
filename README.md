@@ -77,6 +77,10 @@ pattern held. Two weeks in, this looks structural rather than random.
   shape is shifting — overnight gap shrinking (was -16, now -3.4 avg), 
   afternoon gap growing (was +19, now +17.1 avg). MAE roughly stable at 
   9.4 gCO2/kWh.
+- **Week 4 (19-26 Jul):** Overnight bias shrunk for a fourth consecutive 
+  week (-2.3 avg) — clear trend. Afternoon bias reversed course, pulling 
+  back to +8.5 after two weeks of growth. Week 3's 8-9am anomaly did not 
+  repeat at scale. MAE stable at 9.7, consistent with prior weeks.
 
 
 ## Bonus: Match Night Demand (Elexon)
@@ -129,5 +133,36 @@ stable at 9.4 gCO2/kWh. A notable new gap also appeared around 8-9am
 ## Roadmap
 Future weeks will cover: NESO forecast accuracy, Elexon settlement data, 
 DESNZ energy trends, and Ofgem data portal — each
+
+
+## Week 4: Carbon Intensity — Four-Week Trend (National Grid ESO)
+
+**Source:** [Carbon Intensity API](https://carbonintensity.org.uk/) — live, 
+public, no authentication required.
+
+**What's in this analysis:**
+- Actual vs Forecast carbon intensity (gCO2/kWh) over a fourth 
+  independent 7-day window
+- Generation mix by fuel type over the same period
+- A four-week trend comparison — enough data now to see a real trajectory, 
+  not just repetition
+
+**Files:**
+- `ABA_CarbonIntensity.pbix` — Power BI file (updated for Week 4 dates)
+- `screenshots/week4/` — Week 4 chart images
+
+- **Charts:**
+![Actual vs Forecast — Week 4](screenshots/week4/Week_4_Actual_vs_Forecast_Screenshot.png)
+![Generation Mix — Week 4](screenshots/week4/Week_4_Gen_Mix_Screenshot.png)
+
+**Key observation:** The overnight forecast bias has shrunk every single 
+week for four weeks straight (-16 → -6.8 → -3.4 → -2.3 gCO2/kWh) — a 
+clear, consistent trend. The afternoon bias grew for two weeks then 
+pulled back this week (17.1 → 8.5), breaking the simple "growing" story 
+from Week 3. The 8-9am anomaly flagged last week did not repeat at scale 
+(-22.8 → -6.8), suggesting it was likely a one-off. Mean absolute error 
+has stayed flat across all four weeks (9-10 gCO2/kWh) — overall accuracy 
+isn't changing, but where the model goes wrong is shifting with the 
+season.
 
 
