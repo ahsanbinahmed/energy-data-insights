@@ -127,6 +127,10 @@ public, no authentication required.
 - A four-week trend comparison — enough data now to see a real trajectory, 
   not just repetition
 
+- **Charts:**
+![Actual vs Forecast — Week 4](screenshots/week4/Week_4_Actual_vs_Forecast_Screenshot.png)
+![Generation Mix — Week 4](screenshots/week4/Week_4_Gen_Mix_Screenshot.png)
+
 **Files:**
 - `ABA_CarbonIntensity.pbix` — Power BI file (updated for Week 4 dates)
 - `screenshots/week4/` — Week 4 chart images
