@@ -63,26 +63,6 @@ improved slightly (8.6 vs 10.3 gCO2/kWh in Week 1), but the directional
 pattern held. Two weeks in, this looks structural rather than random.
 
 
-
-## Findings Log
-- **Week 1 (27 Jun–4 Jul):** Forecast carried a systematic time-of-day 
-  bias — too high overnight (11pm-7am, by 8-16 gCO2/kWh), too low during 
-  the afternoon peak (3-5pm, by 11-19 gCO2/kWh). Mean absolute error: 
-  10.3 gCO2/kWh.
-- **Week 2 (5-12 Jul):** Same directional bias repeated — overnight too 
-  high (avg -6.8), afternoon too low (avg +11.5). Mean absolute error 
-  improved slightly to 8.6 gCO2/kWh. Two weeks in, the pattern looks 
-  structural rather than random.
-- **Week 3 (12-19 Jul):** Directional bias held for a third week, but 
-  shape is shifting — overnight gap shrinking (was -16, now -3.4 avg), 
-  afternoon gap growing (was +19, now +17.1 avg). MAE roughly stable at 
-  9.4 gCO2/kWh.
-- **Week 4 (19-26 Jul):** Overnight bias shrunk for a fourth consecutive 
-  week (-2.3 avg) — clear trend. Afternoon bias reversed course, pulling 
-  back to +8.5 after two weeks of growth. Week 3's 8-9am anomaly did not 
-  repeat at scale. MAE stable at 9.7, consistent with prior weeks.
-
-
 ## Bonus: Match Night Demand (Elexon)
 
 **Source:** [Elexon Insights Solution](https://bmrs.elexon.co.uk/) — 
@@ -151,18 +131,51 @@ public, no authentication required.
 - `ABA_CarbonIntensity.pbix` — Power BI file (updated for Week 4 dates)
 - `screenshots/week4/` — Week 4 chart images
 
+## Week 5: Carbon Intensity — Trend Reversal (National Grid ESO)
+
+**Source:** [Carbon Intensity API](https://carbonintensity.org.uk/) — live, 
+public, no authentication required.
+
+**What's in this analysis:**
+- Actual vs Forecast carbon intensity (gCO2/kWh) over a fifth 
+  independent 7-day window
+- Generation mix by fuel type over the same period
+
+**Files:**
+- `ABA_CarbonIntensity.pbix` — Power BI file (updated for Week 5 dates)
+- `screenshots/week5/` — Week 5 chart images
+
 - **Charts:**
 ![Actual vs Forecast — Week 4](screenshots/week4/Week_4_Actual_vs_Forecast_Screenshot.png)
 ![Generation Mix — Week 4](screenshots/week4/Week_4_Gen_Mix_Screenshot.png)
 
-**Key observation:** The overnight forecast bias has shrunk every single 
-week for four weeks straight (-16 → -6.8 → -3.4 → -2.3 gCO2/kWh) — a 
-clear, consistent trend. The afternoon bias grew for two weeks then 
-pulled back this week (17.1 → 8.5), breaking the simple "growing" story 
-from Week 3. The 8-9am anomaly flagged last week did not repeat at scale 
-(-22.8 → -6.8), suggesting it was likely a one-off. Mean absolute error 
-has stayed flat across all four weeks (9-10 gCO2/kWh) — overall accuracy 
-isn't changing, but where the model goes wrong is shifting with the 
-season.
+**Key observation:** After four straight weeks of the overnight bias 
+shrinking toward zero, it crossed over this week — forecasts now run 
+slightly too low overnight (+1.3 avg) rather than too high. Afternoon 
+bias jumped to its highest point yet (+18.8), and mean absolute error 
+rose to its weakest week so far (10.9). The four-week trend didn't hold 
+as a straight line.
 
 
+
+
+## Findings Log
+- **Week 1 (27 Jun–4 Jul):** Forecast carried a systematic time-of-day 
+  bias — too high overnight (11pm-7am, by 8-16 gCO2/kWh), too low during 
+  the afternoon peak (3-5pm, by 11-19 gCO2/kWh). Mean absolute error: 
+  10.3 gCO2/kWh.
+- **Week 2 (5-12 Jul):** Same directional bias repeated — overnight too 
+  high (avg -6.8), afternoon too low (avg +11.5). Mean absolute error 
+  improved slightly to 8.6 gCO2/kWh. Two weeks in, the pattern looks 
+  structural rather than random.
+- **Week 3 (12-19 Jul):** Directional bias held for a third week, but 
+  shape is shifting — overnight gap shrinking (was -16, now -3.4 avg), 
+  afternoon gap growing (was +19, now +17.1 avg). MAE roughly stable at 
+  9.4 gCO2/kWh.
+- **Week 4 (19-26 Jul):** Overnight bias shrunk for a fourth consecutive 
+  week (-2.3 avg) — clear trend. Afternoon bias reversed course, pulling 
+  back to +8.5 after two weeks of growth. Week 3's 8-9am anomaly did not 
+  repeat at scale. MAE stable at 9.7, consistent with prior weeks.
+- **Week 5 (26 Jul-2 Aug):** Overnight bias crossed zero (+1.3), 
+  reversing the 4-week shrinking trend. Afternoon bias hit its highest 
+  point (+18.8). MAE rose to 10.9, the weakest week yet.
