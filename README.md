@@ -146,8 +146,8 @@ public, no authentication required.
 - `screenshots/week5/` — Week 5 chart images
 
 - **Charts:**
-![Actual vs Forecast — Week 4](screenshots/week4/Week_4_Actual_vs_Forecast_Screenshot.png)
-![Generation Mix — Week 4](screenshots/week4/Week_4_Gen_Mix_Screenshot.png)
+![Actual vs Forecast — Week 5](screenshots/week5/Week_5_Actual_vs_Forecast_Screenshot.png)
+![Generation Mix — Week 5](screenshots/week5/Week_5_Gen_Mix_Screenshot.png)
 
 **Key observation:** After four straight weeks of the overnight bias 
 shrinking toward zero, it crossed over this week — forecasts now run 
