@@ -182,8 +182,8 @@ drop in actual carbon intensity to near-zero was observed on 6 August
 around midday — flagged but not yet explained.
 
 - **Charts:**
-![Actual vs Forecast — Week 5](screenshots/week6/Week_6_Actual_vs_Forecast_Screenshot.png)
-![Generation Mix — Week 5](screenshots/week6/Week_6_Gen_Mix_Screenshot.png)
+![Actual vs Forecast — Week 5](screenshots/week6/Week_6_Actual_vs_Forecast_Screenshot.jpg)
+![Generation Mix — Week 5](screenshots/week6/Week_6_Gen_Mix_Screenshot.jpg)
 
 
 ## Week 7: Carbon Intensity — Third Straight Week of Declining Accuracy
@@ -201,8 +201,8 @@ public, no authentication required.
 - `screenshots/week7/` — Week 7 chart images
 
 - **Charts:**
-![Actual vs Forecast — Week 5](screenshots/week7/Week_7_Actual_vs_Forecast_Screenshot.png)
-![Generation Mix — Week 5](screenshots/week7/Week_7_Gen_Mix_Screenshot.png)
+![Actual vs Forecast — Week 5](screenshots/week7/Week_7_Actual_vs_Forecast_Screenshot.jp)
+![Generation Mix — Week 5](screenshots/week7/Week_7_Gen_Mix_Screenshot.jpg)
 
 **Key observation:** MAE rose again to 12.2 gCO2/kWh — a third 
 consecutive week of declining accuracy. Overnight bias has settled 
