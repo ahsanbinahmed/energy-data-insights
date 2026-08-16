@@ -201,7 +201,7 @@ public, no authentication required.
 - `screenshots/week7/` — Week 7 chart images
 
 - **Charts:**
-![Actual vs Forecast — Week 5](screenshots/week7/Week_7_Actual_vs_Forecast_Screenshot.jp)
+![Actual vs Forecast — Week 5](screenshots/week7/Week_7_Actual_vs_Forecast_Screenshot.jpg)
 ![Generation Mix — Week 5](screenshots/week7/Week_7_Gen_Mix_Screenshot.jpg)
 
 **Key observation:** MAE rose again to 12.2 gCO2/kWh — a third 
