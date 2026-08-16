@@ -161,6 +161,47 @@ rose to its weakest week so far (10.9). The four-week trend didn't hold
 as a straight line.
 
 
+## Week 6: Carbon Intensity — Accuracy Declining (National Grid ESO)
+
+**Source:** [Carbon Intensity API](https://carbonintensity.org.uk/) — live, 
+public, no authentication required.
+
+**What's in this analysis:**
+- Actual vs Forecast carbon intensity (gCO2/kWh) over a sixth 
+  independent 7-day window
+- Generation mix by fuel type over the same period
+
+**Files:**
+- `ABA_CarbonIntensity.pbix` — Power BI file (updated for Week 6 dates)
+- `screenshots/week6/` — Week 6 chart images
+
+**Key observation:** MAE rose to 12.0 gCO2/kWh, the weakest week yet at 
+that point. The overnight bias that flipped positive in Week 5 stayed 
+positive (+2.3), confirming that shift wasn't a one-off. A sharp, brief 
+drop in actual carbon intensity to near-zero was observed on 6 August 
+around midday — flagged but not yet explained.
+
+
+## Week 7: Carbon Intensity — Third Straight Week of Declining Accuracy
+
+**Source:** [Carbon Intensity API](https://carbonintensity.org.uk/) — live, 
+public, no authentication required.
+
+**What's in this analysis:**
+- Actual vs Forecast carbon intensity (gCO2/kWh) over a seventh 
+  independent 7-day window
+- Generation mix by fuel type over the same period
+
+**Files:**
+- `ABA_CarbonIntensity.pbix` — Power BI file (updated for Week 7 dates)
+- `screenshots/week7/` — Week 7 chart images
+
+**Key observation:** MAE rose again to 12.2 gCO2/kWh — a third 
+consecutive week of declining accuracy. Overnight bias has settled 
+close to zero, but the afternoon bias hit its highest point of the 
+whole tracker (+20.5), and the single largest error across all seven 
+weeks occurred this week (125 gCO2/kWh at 5:30am, 14 August).
+
 
 
 ## Findings Log
@@ -180,6 +221,13 @@ as a straight line.
   week (-2.3 avg) — clear trend. Afternoon bias reversed course, pulling 
   back to +8.5 after two weeks of growth. Week 3's 8-9am anomaly did not 
   repeat at scale. MAE stable at 9.7, consistent with prior weeks.
-- **Week 5 (26 Jul-2 Aug):** Overnight bias crossed zero (+1.3), 
+- **Week 5 (26 Jul-2 Aug):** Overnight bias crossed zero (+1.3),
+- **Week 6 (2-9 Aug):** MAE rose to 12.0, weakest week yet at that point. 
+  Overnight bias stayed positive (+2.3), confirming Week 5's reversal 
+  wasn't a one-off. Unexplained near-zero intensity dip observed 6 Aug.
+- **Week 7 (9-16 Aug):** MAE rose again to 12.2 — third straight week of 
+  declining accuracy. Overnight bias settled near zero; afternoon bias 
+  hit its highest point yet (+20.5). Largest single error of the 
+  tracker so far (125 gCO2/kWh).
   reversing the 4-week shrinking trend. Afternoon bias hit its highest 
   point (+18.8). MAE rose to 10.9, the weakest week yet.
