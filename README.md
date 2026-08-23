@@ -182,8 +182,8 @@ drop in actual carbon intensity to near-zero was observed on 6 August
 around midday — flagged but not yet explained.
 
 - **Charts:**
-![Actual vs Forecast — Week 5](screenshots/week6/Week_6_Actual_vs_Forecast_Screenshot.jpg)
-![Generation Mix — Week 5](screenshots/week6/Week_6_Gen_Mix_Screenshot.jpg)
+![Actual vs Forecast — Week 6](screenshots/week6/Week_6_Actual_vs_Forecast_Screenshot.jpg)
+![Generation Mix — Week 6](screenshots/week6/Week_6_Gen_Mix_Screenshot.jpg)
 
 
 ## Week 7: Carbon Intensity — Third Straight Week of Declining Accuracy
@@ -201,8 +201,8 @@ public, no authentication required.
 - `screenshots/week7/` — Week 7 chart images
 
 - **Charts:**
-![Actual vs Forecast — Week 5](screenshots/week7/Week_7_Actual_vs_Forecast_Screenshot.jpg)
-![Generation Mix — Week 5](screenshots/week7/Week_7_Gen_Mix_Screenshot.jpg)
+![Actual vs Forecast — Week 7](screenshots/week7/Week_7_Actual_vs_Forecast_Screenshot.jpg)
+![Generation Mix — Week 7](screenshots/week7/Week_7_Gen_Mix_Screenshot.jpg)
 
 **Key observation:** MAE rose again to 12.2 gCO2/kWh — a third 
 consecutive week of declining accuracy. Overnight bias has settled 
@@ -210,6 +210,31 @@ close to zero, but the afternoon bias hit its highest point of the
 whole tracker (+20.5), and the single largest error across all seven 
 weeks occurred this week (125 gCO2/kWh at 5:30am, 14 August).
 
+## Week 8: Carbon Intensity — Three-Week Decline Reverses (National Grid ESO)
+
+**Source:** [Carbon Intensity API](https://carbonintensity.org.uk/) — live, 
+public, no authentication required.
+
+**What's in this analysis:**
+- Actual vs Forecast carbon intensity (gCO2/kWh) over an eighth 
+  independent 7-day window
+- Generation mix by fuel type over the same period
+
+**Files:**
+- `ABA_CarbonIntensity.pbix` — Power BI file (updated for Week 8 dates)
+- `screenshots/week8/` — Week 8 chart images
+
+**Key observation:** After three consecutive weeks of declining accuracy 
+(MAE 9.7 → 10.9 → 12.0 → 12.2), Week 8 reversed sharply — MAE dropped 
+back to 10.0, near the middle of the whole tracker's range. Afternoon 
+bias also pulled back (20.5 → 9.3). For a second consecutive week, one 
+extreme single-point miss occurred (122 gCO2/kWh at 9:30pm on 22 
+August) — cause unconfirmed, flagged as an open question rather than 
+explained.
+
+- **Charts:**
+![Actual vs Forecast — Week 8](screenshots/week8/Week_8_Actual_vs_Forecast_Screenshot.jpg)
+![Generation Mix — Week 8](screenshots/week8/Week_8_Gen_Mix_Screenshot.jpg)
 
 
 ## Findings Log
@@ -239,3 +264,6 @@ weeks occurred this week (125 gCO2/kWh at 5:30am, 14 August).
   tracker so far (125 gCO2/kWh).
   reversing the 4-week shrinking trend. Afternoon bias hit its highest 
   point (+18.8). MAE rose to 10.9, the weakest week yet.
+- **Week 8 (16-23 Aug):** Three-week decline in accuracy reversed — MAE 
+  dropped to 10.0, afternoon bias pulled back to 9.3. Second consecutive 
+  week with one large unexplained single-point miss (122 gCO2/kWh).
