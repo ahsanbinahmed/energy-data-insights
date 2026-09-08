@@ -236,6 +236,53 @@ explained.
 ![Actual vs Forecast — Week 8](screenshots/week8/Week_8_Actual_vs_Forecast_Screenshot.jpg)
 ![Generation Mix — Week 8](screenshots/week8/Week_8_Gen_Mix_Screenshot.jpg)
 
+## Week 9: Carbon Intensity — Back to Normal Range (National Grid ESO)
+
+**Source:** [Carbon Intensity API](https://carbonintensity.org.uk/) — live, 
+public, no authentication required.
+
+**What's in this analysis:**
+- Actual vs Forecast carbon intensity (gCO2/kWh) over a ninth 
+  independent 7-day window
+- Generation mix by fuel type over the same period
+
+**Files:**
+- `ABA_CarbonIntensity.pbix` — Power BI file
+- `screenshots/week9/` — Week 9 chart images
+
+- **Charts:**
+![Actual vs Forecast — Week 9](screenshots/week9/Week_9_Actual_vs_Forecast_Screenshot.jpg)
+![Generation Mix — Week 9](screenshots/week9/Week_9_Gen_Mix_Screenshot.jpg)
+
+**Key observation:** MAE was 11.1 gCO2/kWh — within the normal range 
+seen across the tracker so far, nothing unusual this week.
+
+## Week 10: Carbon Intensity — Largest Anomaly of the Tracker
+
+**Source:** [Carbon Intensity API](https://carbonintensity.org.uk/) — live, 
+public, no authentication required.
+
+**What's in this analysis:**
+- Actual vs Forecast carbon intensity (gCO2/kWh) over a tenth 
+  independent 7-day window
+- Generation mix by fuel type over the same period
+
+**Files:**
+- `ABA_CarbonIntensity.pbix` — Power BI file (updated for Week 10 dates)
+- `screenshots/week10/` — Week 10 chart images
+
+- **Charts:**
+![Actual vs Forecast — Week 10](screenshots/week10/Week_10_Actual_vs_Forecast_Screenshot.jpg)
+![Generation Mix — Week 10](screenshots/week10/Week_10_Gen_Mix_Screenshot.jpg)
+
+**Key observation:** MAE more than doubled to 24.6 gCO2/kWh, the 
+largest sustained gap of the whole tracker. 16% of all half-hour 
+readings were off by more than 50 gCO2/kWh, clustered around early 
+mornings on 31 August and 1-2 September, where actual intensity ran 
+far lower than forecast. This is confirmed as a broad shift, not a 
+single outlier — excluding the five biggest misses barely changes the 
+average. Cause unconfirmed.
+
 
 ## Findings Log
 - **Week 1 (27 Jun–4 Jul):** Forecast carried a systematic time-of-day 
@@ -267,3 +314,8 @@ explained.
 - **Week 8 (16-23 Aug):** Three-week decline in accuracy reversed — MAE 
   dropped to 10.0, afternoon bias pulled back to 9.3. Second consecutive 
   week with one large unexplained single-point miss (122 gCO2/kWh).
+- **Week 9 (23-30 Aug):** MAE 11.1, within normal range.
+- **Week 10 (30 Aug-6 Sep):** MAE spiked to 24.6, the largest anomaly 
+  of the tracker — 16% of readings off by 50+ gCO2/kWh, clustered on 
+  31 Aug and 1-2 Sep mornings. Confirmed as a broad shift, not an 
+  outlier artifact. Cause unconfirmed.
