@@ -284,6 +284,40 @@ single outlier — excluding the five biggest misses barely changes the
 average. Cause unconfirmed.
 
 
+## Week 11: Carbon Intensity — Accuracy Improves After Week 10 Spike (National Grid ESO)
+
+**Source:** [Carbon Intensity API](https://carbonintensity.org.uk/) — live, public, no authentication required.
+
+**What's in this analysis:**
+- Actual vs Forecast carbon intensity (gCO2/kWh) over an eleventh independent 7-day window
+- Generation mix by fuel type over the same period
+- Continued tracking of MAE and signed overnight (11pm–7am) and afternoon (3pm–5pm) forecast bias
+
+**Key observation:** MAE fell to 15.9 gCO2/kWh after Week 10's exceptional 24.6 spike, but remained above the tracker's earlier normal range. Overnight bias was effectively neutral at +0.2 gCO2/kWh, while afternoon bias remained strongly positive at +21.6 gCO2/kWh, continuing the persistent afternoon under-forecast pattern.
+
+## Week 12: Carbon Intensity — Back Within Normal Accuracy Range (National Grid ESO)
+
+**Source:** [Carbon Intensity API](https://carbonintensity.org.uk/) — live, public, no authentication required.
+
+**What's in this analysis:**
+- Actual vs Forecast carbon intensity (gCO2/kWh) over a twelfth independent 7-day window
+- Generation mix by fuel type over the same period
+- Continued tracking of MAE and signed overnight and afternoon forecast bias
+
+**Key observation:** MAE dropped to 9.3 gCO2/kWh, returning to the normal range seen across much of the tracker. Overnight bias remained small-positive at +1.3 gCO2/kWh and afternoon bias moderated to +10.9 gCO2/kWh. No obvious major anomaly was identified this week.
+
+## Week 13: Carbon Intensity — Afternoon Bias Strengthens Again (National Grid ESO)
+
+**Source:** [Carbon Intensity API](https://carbonintensity.org.uk/) — live, public, no authentication required.
+
+**What's in this analysis:**
+- Actual vs Forecast carbon intensity (gCO2/kWh) over a thirteenth independent 7-day window
+- Generation mix by fuel type over the same period
+- Continued tracking of MAE and signed overnight and afternoon forecast bias
+
+**Key observation:** MAE rose moderately to 11.6 gCO2/kWh. Overnight bias remained small-positive at +2.3 gCO2/kWh, while afternoon bias strengthened again to +20.8 gCO2/kWh. Across Weeks 11–13, the overnight crossover to small-positive values persisted, while the afternoon under-forecast pattern remained pronounced in two of the three weeks.
+
+
 ## Findings Log
 - **Week 1 (27 Jun–4 Jul):** Forecast carried a systematic time-of-day 
   bias — too high overnight (11pm-7am, by 8-16 gCO2/kWh), too low during 
@@ -301,16 +335,13 @@ average. Cause unconfirmed.
   week (-2.3 avg) — clear trend. Afternoon bias reversed course, pulling 
   back to +8.5 after two weeks of growth. Week 3's 8-9am anomaly did not 
   repeat at scale. MAE stable at 9.7, consistent with prior weeks.
-- **Week 5 (26 Jul-2 Aug):** Overnight bias crossed zero (+1.3),
-- **Week 6 (2-9 Aug):** MAE rose to 12.0, weakest week yet at that point. 
+- **Week 5 (26 Jul-2 Aug):** Overnight bias crossed zero (+1.3), reversing the four-week shrinking trend. Afternoon bias hit its highest point at that stage (+18.8). MAE rose to 10.9.\n- **Week 6 (2-9 Aug):** MAE rose to 12.0, weakest week yet at that point. 
   Overnight bias stayed positive (+2.3), confirming Week 5's reversal 
   wasn't a one-off. Unexplained near-zero intensity dip observed 6 Aug.
 - **Week 7 (9-16 Aug):** MAE rose again to 12.2 — third straight week of 
   declining accuracy. Overnight bias settled near zero; afternoon bias 
   hit its highest point yet (+20.5). Largest single error of the 
   tracker so far (125 gCO2/kWh).
-  reversing the 4-week shrinking trend. Afternoon bias hit its highest 
-  point (+18.8). MAE rose to 10.9, the weakest week yet.
 - **Week 8 (16-23 Aug):** Three-week decline in accuracy reversed — MAE 
   dropped to 10.0, afternoon bias pulled back to 9.3. Second consecutive 
   week with one large unexplained single-point miss (122 gCO2/kWh).
@@ -319,3 +350,7 @@ average. Cause unconfirmed.
   of the tracker — 16% of readings off by 50+ gCO2/kWh, clustered on 
   31 Aug and 1-2 Sep mornings. Confirmed as a broad shift, not an 
   outlier artifact. Cause unconfirmed.
+
+- **Week 11 (6-13 Sep):** MAE improved to 15.9 after Week 10's spike but remained elevated. Overnight bias was near-neutral (+0.2); afternoon bias remained strongly positive (+21.6).
+- **Week 12 (13-20 Sep):** MAE returned to 9.3, within the tracker's normal range. Overnight bias stayed small-positive (+1.3) and afternoon bias moderated to +10.9.
+- **Week 13 (20-27 Sep):** MAE rose to 11.6. Overnight bias remained small-positive (+2.3), while afternoon bias strengthened again to +20.8. Across Weeks 11-13, the overnight crossover held and the persistent afternoon under-forecast pattern remained intact.
