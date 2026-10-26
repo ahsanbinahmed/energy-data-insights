@@ -318,6 +318,55 @@ average. Cause unconfirmed.
 **Key observation:** MAE rose moderately to 11.6 gCO2/kWh. Overnight bias remained small-positive at +2.3 gCO2/kWh, while afternoon bias strengthened again to +20.8 gCO2/kWh. Across Weeks 11–13, the overnight crossover to small-positive values persisted, while the afternoon under-forecast pattern remained pronounced in two of the three weeks.
 
 
+## Weeks 14–17: Carbon Intensity — October Catch-up
+
+Updated through **25 October 2026, 00:00 UTC** (end exclusive), using four complete, non-overlapping UTC weeks. Data were retrieved on 26 October 2026.
+
+All errors below are in **gCO₂/kWh**. Signed bias is **actual minus forecast**: positive means under-forecasting; negative means over-forecasting.
+
+| Week | UTC window (end exclusive) | Valid periods | MAE | Overnight bias | Afternoon bias |
+| --- | --- | ---: | ---: | ---: | ---: |
+| 14 | 2026-09-27 → 2026-10-04 | 336 | 13.8 | +7.7 | +10.9 |
+| 15 | 2026-10-04 → 2026-10-11 | 336 | 10.2 | +4.6 | +10.4 |
+| 16 | 2026-10-11 → 2026-10-18 | 336 | 10.2 | +6.6 | +11.3 |
+| 17 | 2026-10-18 → 2026-10-25 | 336 | 9.7 | +7.1 | +10.0 |
+
+**Key observation:** MAE improved from 13.8 in Week 14 to 9.7 in Week 17. Afternoon bias stayed positive in all four new weeks (+10.0 to +11.3), indicating repeated under-forecasting within this UTC band. Overnight bias was also positive (+4.6 to +7.7). These observations do not identify the cause of the errors.
+
+### Reproducible methodology
+
+- Use interval **start** timestamps, UTC, with each week defined as `[start, end)`. The API also returns a period ending at the requested start; this is excluded to prevent overlap.
+- Weekly MAE is the mean of `abs(actual − forecast)` over 336 half-hourly periods. Missing values, missing periods and duplicate start timestamps cause the script to stop.
+- Overnight bias averages signed half-hourly errors with start hours `{23, 0, 1, 2, 3, 4, 5, 6, 7}`; afternoon bias uses `{15, 16, 17}`. These mean 23:00–08:00 and 15:00–18:00 UTC; they are not UK local-time bands.
+- **Historical comparability:** re-fetching Week 13 reproduced its published MAE (11.6), but gave overnight +1.2 and afternoon +15.2 using the calculation above, versus the previously published +2.3 and +20.8. The original calculation script is absent from this repository; the reason for the difference is unresolved. Historical figures are preserved. Do not infer a like-for-like change in band bias from Weeks 1–13 to Weeks 14–17 until that discrepancy is reconciled.
+- Historical API `forecast` values are analysed as returned at retrieval. This does not establish a fixed forecast lead time or preserve forecast revisions. Generation mix is descriptive; no causal attribution is made.
+
+### Data and reproduction
+
+Run with Python 3 (standard library only):
+
+```bash
+python scripts/update_carbon_intensity.py --start 2026-09-27 --weeks 4 --first-week 14
+```
+
+Each `data/weekN/` folder contains forecast/actual and generation CSVs, raw API JSON, and source URLs with retrieval time. The summary is in [`data/weekly_summary.csv`](data/weekly_summary.csv). Re-fetching later may reflect API revisions. The Power BI `.pbix` file has not been refreshed in this update.
+
+### Week 14
+
+![Actual, forecast and signed error — Week 14](screenshots/week14/forecast_accuracy.png)
+
+### Week 15
+
+![Actual, forecast and signed error — Week 15](screenshots/week15/forecast_accuracy.png)
+
+### Week 16
+
+![Actual, forecast and signed error — Week 16](screenshots/week16/forecast_accuracy.png)
+
+### Week 17
+
+![Actual, forecast and signed error — Week 17](screenshots/week17/forecast_accuracy.png)
+
 ## Findings Log
 - **Week 1 (27 Jun–4 Jul):** Forecast carried a systematic time-of-day 
   bias — too high overnight (11pm-7am, by 8-16 gCO2/kWh), too low during 
@@ -335,7 +384,8 @@ average. Cause unconfirmed.
   week (-2.3 avg) — clear trend. Afternoon bias reversed course, pulling 
   back to +8.5 after two weeks of growth. Week 3's 8-9am anomaly did not 
   repeat at scale. MAE stable at 9.7, consistent with prior weeks.
-- **Week 5 (26 Jul-2 Aug):** Overnight bias crossed zero (+1.3), reversing the four-week shrinking trend. Afternoon bias hit its highest point at that stage (+18.8). MAE rose to 10.9.\n- **Week 6 (2-9 Aug):** MAE rose to 12.0, weakest week yet at that point. 
+- **Week 5 (26 Jul-2 Aug):** Overnight bias crossed zero (+1.3), reversing the four-week shrinking trend. Afternoon bias hit its highest point at that stage (+18.8). MAE rose to 10.9.
+- **Week 6 (2-9 Aug):** MAE rose to 12.0, weakest week yet at that point.
   Overnight bias stayed positive (+2.3), confirming Week 5's reversal 
   wasn't a one-off. Unexplained near-zero intensity dip observed 6 Aug.
 - **Week 7 (9-16 Aug):** MAE rose again to 12.2 — third straight week of 

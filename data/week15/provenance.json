@@ -1,0 +1,9 @@
+{
+  "retrieved_at_utc": "2026-10-26T16:10:07.091974+00:00",
+  "start_inclusive_utc": "2026-10-04",
+  "end_exclusive_utc": "2026-10-11",
+  "sources": {
+    "intensity": "https://api.carbonintensity.org.uk/intensity/2026-10-04/2026-10-11",
+    "generation": "https://api.carbonintensity.org.uk/generation/2026-10-04/2026-10-11"
+  }
+}
