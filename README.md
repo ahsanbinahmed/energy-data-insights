@@ -367,6 +367,25 @@ Each `data/weekN/` folder contains forecast/actual and generation CSVs, raw API 
 
 ![Actual, forecast and signed error — Week 17](screenshots/week17/forecast_accuracy.png)
 
+## Week 18: Carbon Intensity — Weekly Update
+
+**Window:** 25 October–1 November 2026, 00:00 UTC (end exclusive). Retrieved 3 November 2026. All 336 half-hourly forecast/actual and generation observations are present.
+
+| MAE | Overnight bias | Afternoon bias | Largest absolute error | Errors above 50 |
+| ---: | ---: | ---: | ---: | ---: |
+| 8.5 | +2.0 | +14.3 | 44 | 0 / 336 |
+
+All error values are in gCO₂/kWh. Signed bias is actual minus forecast. UTC interval-start bands match Weeks 14–17: overnight hours {23,0–7} and afternoon hours {15,16,17}. This week includes the UK clock change; the analysis uses a fixed UTC week and UTC bands throughout.
+
+**Key observation:** Weekly MAE was 8.5, compared with 9.7 in Week 17. Afternoon bias was +14.3; overnight bias was +2.0. Positive bias indicates under-forecasting; negative bias indicates over-forecasting. The data do not establish a cause or a fixed forecast lead time.
+
+[Source observations and raw API responses](data/week18/) · [Weekly summary](data/weekly_summary.csv)
+
+![Actual, forecast and signed error — Week 18](screenshots/week18/forecast_accuracy.png)
+![Generation mix — Week 18](screenshots/week18/generation_mix.png)
+
+Reproduce with `python scripts/update_carbon_intensity.py --start 2026-10-25 --weeks 1 --first-week 18`. The script now preserves earlier summary rows when updating an individual week. The historical comparability note above continues to apply. The Power BI file has not been refreshed as part of this update.
+
 ## Findings Log
 - **Week 1 (27 Jun–4 Jul):** Forecast carried a systematic time-of-day 
   bias — too high overnight (11pm-7am, by 8-16 gCO2/kWh), too low during 
@@ -404,3 +423,5 @@ Each `data/weekN/` folder contains forecast/actual and generation CSVs, raw API 
 - **Week 11 (6-13 Sep):** MAE improved to 15.9 after Week 10's spike but remained elevated. Overnight bias was near-neutral (+0.2); afternoon bias remained strongly positive (+21.6).
 - **Week 12 (13-20 Sep):** MAE returned to 9.3, within the tracker's normal range. Overnight bias stayed small-positive (+1.3) and afternoon bias moderated to +10.9.
 - **Week 13 (20-27 Sep):** MAE rose to 11.6. Overnight bias remained small-positive (+2.3), while afternoon bias strengthened again to +20.8. Across Weeks 11-13, the overnight crossover held and the persistent afternoon under-forecast pattern remained intact.
+
+- **Week 18 (25 Oct–1 Nov, UTC end exclusive):** MAE 8.5; overnight bias +2.0; afternoon bias +14.3. Complete 336-period week.

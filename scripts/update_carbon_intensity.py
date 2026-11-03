@@ -25,7 +25,7 @@ def fetch(endpoint, start, end):
 
 def write_csv(path, rows):
     with path.open('w', newline='', encoding='utf-8') as f:
-        writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -70,7 +70,14 @@ def main():
         summaries.append(summary)
         (folder/'provenance.json').write_text(json.dumps(provenance, indent=2)+'\n')
         print(json.dumps(summary), flush=True)
-    write_csv(ROOT/'data'/'weekly_summary.csv', summaries)
+    summary_path = ROOT/'data'/'weekly_summary.csv'
+    existing = []
+    if summary_path.exists():
+        with summary_path.open(newline='', encoding='utf-8') as handle:
+            existing = list(csv.DictReader(handle))
+    updated_weeks = {int(row['week']) for row in summaries}
+    merged = [row for row in existing if int(row['week']) not in updated_weeks] + summaries
+    write_csv(summary_path, sorted(merged, key=lambda row: int(row['week'])))
 
 
 if __name__ == '__main__':
