@@ -1,0 +1,30 @@
+name: Catch up carbon-intensity Week 19
+
+on:
+  push:
+    paths:
+      - ".github/workflows/carbon-intensity-week19.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  week19:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch and validate 336 half-hourly observations
+        run: python scripts/update_carbon_intensity.py --start 2026-11-01 --weeks 1 --first-week 19
+      - name: Commit source observations and weekly summary
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/week19 data/weekly_summary.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "Update carbon intensity forecast accuracy through 8 November 2026"
+            git push
+          fi
