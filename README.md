@@ -2,7 +2,7 @@
 
 Weekly analysis of UK energy market data — live datasets, Power BI dashboards, and insights, built as an ongoing public series.
 
-**Latest update** — [Week 19, 1–8 November 2026 (UTC, end exclusive)](#week-19-carbon-intensity--weekly-update)
+**Latest update** — [Week 20, 8–15 November 2026 (UTC, end exclusive)](#week-20-carbon-intensity--weekly-update)
 
 ## About
 This project tracks real UK energy market data over time, turning it into 
@@ -404,6 +404,20 @@ Afternoon bias was close to zero after five weeks of positive bias (+10.05 to +1
 
 Re-fetch and recalculate with `python scripts/update_carbon_intensity.py --start 2026-11-01 --weeks 1 --first-week 19`. Use the committed CSVs and raw responses to audit this snapshot, since later API retrievals may include revisions. The historical Weeks 1–13 comparability caveat above still applies.
 
+## Week 20: Carbon Intensity — Weekly Update
+
+**Window:** 8–15 November 2026, 00:00 UTC (end exclusive). All 336 half-hourly forecast/actual and generation observations are present.
+
+| MAE | Mean signed error | Overnight bias | Afternoon bias | Largest absolute error | Errors above 50 |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 6.64 | −2.20 | −0.65 | −1.88 | 42 | 0 / 336 |
+
+Errors are in gCO₂/kWh; signed error is actual minus forecast, using the same UTC bands as Weeks 14–19. MAE rose slightly from 6.45 in Week 19 but remained below Weeks 14–18. Afternoon bias remained negative for a second consecutive week, following five weeks of positive bias. This is the third consecutive week with no absolute errors above 50. These observations do not establish a cause or a permanent change.
+
+[Half-hourly forecast and actuals](data/week20/intensity.csv) · [Generation mix](data/week20/generation.csv) · [Raw API responses and provenance](data/week20/) · [Weekly summary](data/weekly_summary.csv)
+
+Reproduce with `python scripts/update_carbon_intensity.py --start 2026-11-08 --weeks 1 --first-week 20`. Historical comparability caveats continue to apply. The Power BI file has not been refreshed in this update.
+
 ## Findings Log
 - **Week 1 (27 Jun–4 Jul):** Forecast carried a systematic time-of-day 
   bias — too high overnight (11pm-7am, by 8-16 gCO2/kWh), too low during 
@@ -444,3 +458,4 @@ Re-fetch and recalculate with `python scripts/update_carbon_intensity.py --start
 
 - **Week 18 (25 Oct–1 Nov, UTC end exclusive):** MAE 8.5; overnight bias +2.0; afternoon bias +14.3. Complete 336-period week.
 - **Week 19 (1–8 Nov, UTC end exclusive)** — MAE 6.4464, overnight bias +1.7063 and afternoon bias −0.3333. Across 336 periods, the largest absolute error was 43 and none exceeded 50. Afternoon MAE was 5.76 versus 14.69 in Week 18. The duration of the change is unknown.
+- **Week 20 (8–15 Nov, UTC end exclusive):** MAE 6.64; overnight bias −0.65; afternoon bias −1.88. No absolute errors above 50 for the third consecutive week.
