@@ -1,0 +1,9 @@
+{
+  "retrieved_at_utc": "2026-11-28T17:22:53.593230+00:00",
+  "start_inclusive_utc": "2026-11-15",
+  "end_exclusive_utc": "2026-11-22",
+  "sources": {
+    "intensity": "https://api.carbonintensity.org.uk/intensity/2026-11-15/2026-11-22",
+    "generation": "https://api.carbonintensity.org.uk/generation/2026-11-15/2026-11-22"
+  }
+}

@@ -418,6 +418,20 @@ Errors are in gCO₂/kWh; signed error is actual minus forecast, using the same 
 
 Reproduce with `python scripts/update_carbon_intensity.py --start 2026-11-08 --weeks 1 --first-week 20`. Historical comparability caveats continue to apply. The Power BI file has not been refreshed in this update.
 
+## Week 21: Carbon Intensity — Weekly Update
+
+**Window:** 15–22 November 2026, 00:00 UTC (end exclusive). Retrieved 28 November 2026. All 336 half-hourly forecast/actual and generation observations are present.
+
+| MAE | Mean signed error | Overnight bias | Afternoon bias | Largest absolute error | Errors above 50 |
+| ---: | ---: | ---: | ---: | ---: | ---: |
+| 8.30 | −2.34 | +3.55 | −3.57 | 52 | 1 / 336 |
+
+Errors are in gCO₂/kWh; signed error is actual minus forecast, using the same UTC bands as Weeks 14–20. MAE increased from 6.64 in Week 20 to 8.30. Afternoon bias remained negative for a third consecutive week, while overnight bias turned positive again. One half-hour period exceeded an absolute error of 50, ending the three-week run without such errors. These observations do not establish a cause or a permanent change.
+
+[Half-hourly forecast and actuals](data/week21/intensity.csv) · [Generation mix](data/week21/generation.csv) · [Raw API responses and provenance](data/week21/) · [Weekly summary](data/weekly_summary.csv)
+
+Reproduce with `python scripts/update_carbon_intensity.py --start 2026-11-15 --weeks 1 --first-week 21`. Historical API forecasts are assessed as returned at retrieval; a fixed forecast lead time is not established. Historical comparability caveats continue to apply. The Power BI file has not been refreshed in this update.
+
 ## Findings Log
 - **Week 1 (27 Jun–4 Jul):** Forecast carried a systematic time-of-day 
   bias — too high overnight (11pm-7am, by 8-16 gCO2/kWh), too low during 
@@ -463,3 +477,4 @@ Reproduce with `python scripts/update_carbon_intensity.py --start 2026-11-08 --w
 - **Week 18 (25 Oct–1 Nov, UTC end exclusive):** MAE 8.5; overnight bias +2.0; afternoon bias +14.3. Complete 336-period week.
 - **Week 19 (1–8 Nov, UTC end exclusive)** — MAE 6.4464, overnight bias +1.7063 and afternoon bias −0.3333. Across 336 periods, the largest absolute error was 43 and none exceeded 50. Afternoon MAE was 5.76 versus 14.69 in Week 18. The duration of the change is unknown.
 - **Week 20 (8–15 Nov, UTC end exclusive):** MAE 6.64; overnight bias −0.65; afternoon bias −1.88. No absolute errors above 50 for the third consecutive week.
+- **Week 21 (15–22 Nov, UTC end exclusive):** MAE 8.30; overnight bias +3.55; afternoon bias −3.57. Complete 336-period week; largest absolute error 52, with one absolute error above 50. Afternoon bias was negative for a third consecutive week.
